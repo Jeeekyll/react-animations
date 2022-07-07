@@ -6,6 +6,7 @@
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 15px;
+  overflow: hidden;
 }
 
 .box {
@@ -51,4 +52,141 @@
   &_green {
     background-color: green;
   }
+}
+
+.image {
+  position: relative;
+  overflow: hidden;
+  width: 500px;
+
+  & img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:before {
+    content: '';
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+  }
+}
+
+.slider {
+  position: relative;
+
+  &__wrapper {
+    position: relative;
+    z-index: 1;
+    //display: flex;
+    //width: 600px;
+    //justify-content: center;
+    //overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      transform: translate(-50%, -50%);
+
+      width: 60px;
+      height: 60px;
+      z-index: -1;
+
+      background-color: blue;
+      border-radius: 50%;
+    }
+  }
+
+  &__item {
+    display: none;
+    width: 600px;
+    align-items: center;
+    gap: 50px;
+    border-radius: 5px;
+    z-index: 10;
+    background-color: white;
+
+    &-img {
+      width: 350px;
+      height: 400px;
+      overflow: hidden;
+      flex-grow: 1;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-content {
+      padding: 0 30px 10px 0;
+      text-align: center;
+    }
+
+    &_active {
+      display: flex;
+    }
+
+    & h5 {
+      font-size: 24px;
+      line-height: 28px;
+      margin: 0;
+      margin-bottom: 10px;
+
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    padding: 5px 6px;
+    background-color: aqua;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+
+    &_next {
+      right: 0;
+      top: 50%;
+      transform: translate(50%, -50%);
+    }
+
+    &_prev {
+      left: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+
+  &Input {
+    display: flex;
+    gap: 5px;
+
+    input {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-radius: 5px;
 }
