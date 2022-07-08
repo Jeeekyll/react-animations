@@ -1,12 +1,10 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.scss";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Circles from "./components/Circles";
-import Slider from "./components/Slider";
-import image from "./unknown.png";
-import FadeImage from "./components/FadeImage";
-import Todo from "./components/Todo";
+import Header from "./components/Header";
+import Content from "./components/Content";
 
 const App = () => {
   const items = [
@@ -33,7 +31,6 @@ const App = () => {
     },
   ];
 
-
   const mainRef = useRef(null);
 
   useEffect(() => {
@@ -42,13 +39,8 @@ const App = () => {
 
   return (
     <div ref={mainRef} className="main">
-      {/*<Circles />*/}
-      <div className="container">
-        <div className="main__row">
-          <Todo/>
-          {/*<Slider items={items} />*/}
-        </div>
-      </div>
+      <Header />
+      <Content />
     </div>
   );
 };

@@ -190,3 +190,66 @@
   background-color: #fff;
   border-radius: 5px;
 }
+
+.main {
+  position: relative;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: background-color .3s ease;
+  background-color: rgba(#fff, .8);
+
+  &:hover {
+    background-color: rgba(#fff, .8);
+  }
+
+  &__container {
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 1150px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  &__links {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__link {
+    list-style: none;
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  &__btn-login {
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+}
+
+.content {
+  margin-top: 100px;
+}
